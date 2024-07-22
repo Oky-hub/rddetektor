@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>RD Detektor</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static',filename='/assets/img/RD-Detektor.png') }}" rel="icon" />
+  <link href="{{ url_for('static',filename='/assets/img/RD-Detektor.png') }}" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static',filename='assets/vendor/aos/aos.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
+
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static',filename='assets/css/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+      <div id="logo">
+        <h1>
+          <a href="/index.html">RD<span> Detektor</span></a>
+        </h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+          <li><a style="color: black">|</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Selamat Datang di Aplikasi Deteksi Retinopati Diabetik</h2>
+      <h3>Mesin Pemindaian Penyakit Retinopati Diabetik</h3>
+
+      <div class="container1 mt-5">
+        <form action="/submit" method="post" enctype="multipart/form-data">
+          <input type="file" name="my_image" id="pwd" accept="image/*" hidden />
+          <div class="img-area" id="img-area">
+              <i class="bx bxs-cloud-upload icon"></i>
+              <h3>Unggah Citra</h3>
+              <p>Ukuran citra harus lebih kecil dari <span>2MB</span></p>
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="select-image" type="button">Pilih Gambar</button>
+              <button class="detect-image" type="submit">Deteksi</button>
+          </div>
+      </form>
+
+      </div>
+
+    </div>
+
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/background-eye1.jpg');"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+
+        <section id="hero1">
+          <div class="hero-content1" data-aos="fade-up">
+            <h2>Tentang</h2>
+          </div>
+        </section>
+        <div class="row">
+
+          <div class="container overflow-hidden">
+            <div class="row gy-5">
+              <div class="col-6">
+                <div class="p-3 border border-white bg-white rounded content">
+                  <h2>Apa itu DR Detektor?</h2>
+                  <ul>
+                    <li>
+                      DR (Diabetik Retinopati) detektor merupakan sistem yang melakukan proses deteksi atau klasifikasi
+                      penyakit retinopati diabetik pada citra retina fundus. Sistem
+                      ini menggunakan teknologi Deep Learning berdasarkan metode yang telah ditentukan sehingga
+                      memberikan hasil yang dapat diandalkan.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border border-white bg-white rounded content">
+                  <h2>Tujuan</h2>
+                  <ul>
+                    <li> Membantu pengguna mengidentifikasi dini penyakit Diabetik Retinopati. Hasil klasifikasi dapat
+                      digunakan untuk penanganan lebih lanjut.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border border-white bg-white rounded content">
+                  <h2>Cara Kerja dan Fitur</h2>
+                  <ul>
+                    <li> Website ini menggunakan teknologi Deep Learning dengan model Convolutional Neural Network (CNN)
+                      dengan ekstraksi fitur pada gambar menggunakan Local
+                      Binary Pattern (LBP) yang telah dilatih untuk mendapatkan hasil yang lebih akurat. Pengguna dapat
+                      mengunggah gambar retina fundus yang ingin dianalisis, lalu sistem
+                      akan melakukan deteksi dan memberikan hasil berupa klasifikasi citra yaitu normal atau diabetik
+                      retinopati.</li>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border border-white bg-white rounded content">
+                  <h2>Pengembang</h2>
+                  <ul>
+                    <li> Oky Firnanda - 2055301108</li>
+                    <li> Program Studi Teknik Informatika</li>
+                    <li> Politeknik Caltex Riau</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+  </main>
+  <!-- End #main -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static',filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static',filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+  <script>
+     document.querySelector('.select-image').addEventListener('click', function() {
+            document.getElementById('pwd').click();
+        });
+
+        document.getElementById('pwd').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const imgArea = document.getElementById('img-area');
+                imgArea.innerHTML = ''; // Clear previous content
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.onload = function() {
+                    URL.revokeObjectURL(img.src); // Free up memory
+                }
+                imgArea.appendChild(img);
+            }
+        });
+  </script>
+</body>
+
+</html>
